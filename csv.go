@@ -16,6 +16,14 @@ type RowResult struct {
 	Err error
 }
 
+// 处理csv
+// 输入
+//  reader: 读取文件
+//  conNum: 处理文件行，并发粒度
+//  doRow: 处理每行函数，返回error
+// 输出
+//  错误行信息
+//  error信息
 func ReadCSV(reader *csv.Reader, conNum int, doRow func(*RowResult) error) ([]*RowResult, error) {
 	rowChan := make(chan *RowResult, conNum)
 	faiChan := make(chan *RowResult, conNum)
