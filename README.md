@@ -1,5 +1,5 @@
 # verb_csv_read
-go预约并发处理csv
+go并发处理csv
 
 特点：
 - 支持自定义协程数处理csv，并发处理每一行
